@@ -10,13 +10,10 @@ import javafx.scene.control.TextArea;
  * DD: Controller class for calculator
  */
 public class CalculatorController {
-    @FXML
-    private Label welcomeText;
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    /*MATH ATTRIBUTES*/
+    private double firstHalf;
+    private char operation;
 
     @FXML
     private Button add;
@@ -83,6 +80,74 @@ public class CalculatorController {
 
     @FXML
     void onClicked(ActionEvent event) {
-        System.out.println(event.toString());
+        //Adding visual display of toggled button
+        if (event.getSource() == zero){
+            display.setText(display.getText() + "0");
+        } else if (event.getSource() == one){
+            display.setText(display.getText() + "1");
+        } else if (event.getSource() == two){
+            display.setText(display.getText() + "2");
+        } else if (event.getSource() == three){
+            display.setText(display.getText() + "3");
+        } else if (event.getSource() == four){
+            display.setText(display.getText() + "4");
+        } else if (event.getSource() == five){
+            display.setText(display.getText() + "5");
+        } else if (event.getSource() == six){
+            display.setText(display.getText() + "6");
+        } else if (event.getSource() == seven){
+            display.setText(display.getText() + "7");
+        } else if (event.getSource() == eight){
+            display.setText(display.getText() + "8");
+        } else if (event.getSource() == nine){
+            display.setText(display.getText() + "9");
+        } else if (event.getSource() == add){
+           firstHalf = Double.parseDouble(display.getText());
+           operation = '+';
+            display.setText("");
+        } else if (event.getSource() == subtract){
+            firstHalf = Double.parseDouble(display.getText());
+            operation = '-';
+            display.setText("");
+        } else if (event.getSource() == multiply){
+            firstHalf = Double.parseDouble(display.getText());
+            operation = '*';
+            display.setText("");
+        } else if (event.getSource() == divison){
+            firstHalf = Double.parseDouble(display.getText());
+            operation = '/';
+            display.setText("");
+        } else if (event.getSource() == dot){
+            display.setText(display.getText() + ".");
+        } else if (event.getSource() == mod){
+            firstHalf = Double.parseDouble(display.getText());
+            operation = '%';
+            display.setText("");
+        } else if (event.getSource() == signChange){
+           /* String text = display.getText();
+            //check if there is any text,if not return
+            if (text.isEmpty())
+                return;
+            //Tell if number is negative or positive
+            String sign = text.charAt(text.length() - 1) == '-' ? "" : "-";
+            if (!sign.equals("-"))
+                text = text.substring(0, text.length() - 1);
+            display.setText(sign + text);*/
+
+
+        } else if (event.getSource() == clear){
+            display.setText("");
+        } else if (event.getSource() == equals){
+            double result = 0;
+            double otherHalf = Double.parseDouble(display.getText());
+            switch (operation) {
+                case '+' -> result = firstHalf + otherHalf;
+                case '-' -> result = firstHalf - otherHalf;
+                case '*' -> result = firstHalf * otherHalf;
+                case '/' -> result = firstHalf / otherHalf;
+                case '%' -> result = firstHalf % otherHalf;
+            }
+            display.setText(String.valueOf(result));
+        }
     }
 }
