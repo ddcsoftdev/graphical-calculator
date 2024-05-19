@@ -33,9 +33,7 @@ To install and run the graphical calculator, follow these steps:
 
 ## Screenshots
 
-<img src="https://github.com/ddcsoftdev/graphical-calculator/raw/main/screenshots/screenshot1.png" alt="Calculator Screenshot 1">
-
-<img src="https://github.com/ddcsoftdev/graphical-calculator/raw/main/screenshots/screenshot2.png" alt="Calculator Screenshot 2">
+<img width="398" alt="Screenshot 2024-01-31 at 09 51 37" src="https://github.com/ddcsoftdev/graphical-calculator/assets/148901730/0a14d843-50d2-49f3-9527-94e580fe427f">
 
 ## Usage
 
